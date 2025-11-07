@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пресс-центр - Гомельэнерго</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #004494;
+            --secondary: #00c853;
+            --accent: #ff6d00;
+            --dark: #1a237e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--light);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .emergency-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .emergency-contact .icon {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .company-name h1 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .company-name p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background: rgba(0,86,179,0.1);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230056b3" width="1200" height="800"/><path fill="%23004494" d="M0,0L1200,800H0V0Z"/></svg>');
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+        }
+
+        /* Press Navigation */
+        .press-nav {
+            background: white;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .press-nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .press-nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: var(--light);
+        }
+
+        .press-nav-menu a:hover,
+        .press-nav-menu a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .news-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+        }
+
+        .news-date {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-content h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .news-content p {
+            color: var(--gray);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .news-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .news-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Brand Style Section */
+        .brand-style {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-demo {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .logo-variants {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .logo-variant {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .logo-variant:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo-preview {
+            height: 80px;
+            background: var(--light);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .download-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .color-schemes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .color-scheme {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .color-demo {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .color-square {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .color-primary { background: var(--primary); }
+        .color-secondary { background: var(--secondary); }
+        .color-accent { background: var(--accent); }
+
+        .brand-info h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .brand-info p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Media Contacts */
+        .media-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--light);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-name {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-position {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        .contact-social {
+            margin-top: 1rem;
+            justify-content: center;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-social .social-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-social a {
+            color: var(--primary);
+            background: rgba(0,86,179,0.1);
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-social a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Стили для карты в карточке */
+        .map-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .map-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-subtitle {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .map-container {
+            height: 300px;
+            position: relative;
+        }
+
+        #yamap0 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .map-footer {
+            padding: 1rem 2rem;
+            background: var(--light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .map-address {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .map-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .map-link:hover {
+            gap: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #000 100%);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-main {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .press-nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .brand-style,
+            .media-contacts {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-variants,
+            .color-schemes {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="emergency-contact">
+                <div class="icon">!</div>
+                <span>Аварийная служба: <strong>144, 115</strong></span>
+            </div>
+             <div class="social-links">
+                <a href="https://www.facebook.com/gomelenergo/" title="Facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/gomelenergo/" title="Instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCGDyEUz1LqIcE2rwxYC0JtQ" title="YouTube">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="https://vk.com/gomelenergo" title="VK">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.562-1.042.562-1.52 0-3.188-.901-4.375-2.563-1.766-2.354-2.411-4.208-2.411-4.635 0-.218.083-.417.5-.417h1.459c.375 0 .51.167.656.552.708 2.084 1.916 3.896 2.406 3.896.188 0 .27-.083.27-.552v-2.146c-.062-.979-.582-1.062-.582-1.416a.36.36 0 0 1 .365-.334h2.188c.312 0 .417.156.417.531v2.896c0 .313.135.417.229.417.188 0 .333-.104.677-.448.989-1.093 1.708-2.708 1.708-2.708.093-.219.229-.365.552-.365h1.459c.437 0 .53.219.437.531-.219.656-2.312 3.729-2.312 3.729-.187.27-.27.416 0 .803.188.385.833.927 1.24 1.458.781.948 1.354 1.812 1.354 2.375 0 .281-.167.417-.5.417z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/gomelenergo_by" title="Telegram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.139l-1.895 8.874c-.125.533-.475.663-.863.421l-3.865-2.852-1.89 1.806c-.209.209-.385.385-.789.385l.277-3.973 7.159-6.458c.312-.278-.069-.432-.482-.156l-8.86 5.587-3.736-1.169c-.533-.167-.544-.533.111-.789l14.572-5.602c.443-.167.833.125.694.789z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-main">
+    <div class="logo-section">
+        <div class="logo">ГЭ</div>
+        <div class="company-name">
+            <h1>Гомельэнерго</h1>
+            <p>Республиканское унитарное предприятие</p>
+        </div>
+    </div>
+    
+    <button class="mobile-menu-btn">☰</button>
+    
+    <ul class="nav-menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="About.html">О предприятии</a></li>
+        <li><a href="#">Физическим лицам</a></li>
+        <li><a href="#">Юридическим лицам</a></li>
+        <li><a href="Presscenter.html">Пресс-центр</a></li>
+        <li><a href="Contacts.html">Контакты</a></li>
+        <li><a href="https://gsz.gov.by/registration/vacancy-search/?profession=&region=9397&district=&salary_min=&wage_rate_from=&wage_rate_to=&business_entity=166426&search_period=0&sort_by=sort_published_at_desc=&extended_search=True">Вакансии</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Пресс-центр</h2>
+            <p>На данной странице можно найти всю актуальную информацию о последних событиях в РУП "Гомельэнерго", а также новости последних лет и контакты для пресс-служб</p>
+            <div class="cta-buttons">
+                <a href="#news" class="btn btn-primary">Все новости</a>
+                <a href="#media-contacts" class="btn btn-secondary">Контакты для СМИ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Navigation -->
+    <nav class="press-nav">
+        <ul class="press-nav-menu">
+            <li><a href="#news" class="active">Все новости</a></li>
+            <li><a href="#brand-style">Фирменный стиль</a></li>
+            <li><a href="https://npa.gomelenergo.by">История газетной строкой</a></li>
+            <li><a href="https://www.gomelenergo.by/god-kachestva/">Год благоустройства</a></li>
+        </ul>
+    </nav>
+
+    <!-- Latest News -->
+<section class="section section-light" id="news">
+    <div class="section-title">
+        <h2>Последние новости</h2>
+        <p>Актуальные события и мероприятия предприятия</p>
+    </div>
+    <div class="news-grid">
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://www.gomelenergo.by/wp-content/themes/gomelenergo/assets/images/differentUsefulContacts.jpg" alt="Контакты Гомельэнерго" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="news-date">15.01.2025</div>
+            </div>
+            <div class="news-content">
+                <div class="news-tags">
+                    <span class="news-tag">События</span>
+                    <span class="news-tag">Энергетика</span>
+                </div>
+                <h3>Модернизация энергосистемы Гомельского региона</h3>
+                <p>Завершены работы по модернизации ключевых объектов энергосистемы, что позволит повысить надежность энергоснабжения потребителей.</p>
+                <a href="#" class="read-more">Читать далее →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://garmcentr.ru/upload/statyiImg/3ecc9b101ebaa143ffe7619295728001.jpg" alt="Семинар по электробезопасности" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="news-date">10.01.2025</div>
+            </div>
+            <div class="news-content">
+                <div class="news-tags">
+                    <span class="news-tag">Безопасность</span>
+                    <span class="news-tag">Обучение</span>
+                </div>
+                <h3>Семинар по электробезопасности для населения</h3>
+                <p>Проведен образовательный семинар, направленный на повышение уровня знаний населения в области электробезопасности.</p>
+                <a href="#" class="read-more">Читать далее →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="SMART технологии в энергосетях" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="news-date">05.01.2025</div>
+            </div>
+            <div class="news-content">
+                <div class="news-tags">
+                    <span class="news-tag">Инновации</span>
+                    <span class="news-tag">Технологии</span>
+                </div>
+                <h3>Внедрение SMART-технологий в энергосетях</h3>
+                <p>Начато внедрение интеллектуальных систем мониторинга и управления энергетическими объектами.</p>
+                <a href="#" class="read-more">Читать далее →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Brand Style -->
+    <section class="section section-white" id="brand-style">
+        <div class="section-title">
+            <h2>Фирменный стиль</h2>
+            <p>Элементы корпоративного стиля РУП "Гомельэнерго"</p>
+        </div>
+        <div class="brand-style">
+            <div class="brand-demo">
+                <div class="logo-variants">
+                    <div class="logo-variant">
+                        <div class="logo-preview">ГЭ</div>
+                        <a href="#" class="download-link">Скачать в формате EPS</a>
+                    </div>
+                    <div class="logo-variant">
+                        <div class="logo-preview" style="background: var(--dark); color: white;">ГЭ</div>
+                        <a href="#" class="download-link">Скачать в формате EPS</a>
+                    </div>
+                    <div class="logo-variant">
+                        <div class="logo-preview" style="background: white; border: 2px solid var(--primary);">ГЭ</div>
+                        <a href="#" class="download-link">Скачать в формате EPS</a>
+                    </div>
+                </div>
+                <div class="color-schemes">
+                    <div class="color-scheme">
+                        <h4>Основные цвета</h4>
+                        <div class="color-demo">
+                            <div class="color-square color-primary"></div>
+                            <div class="color-square color-secondary"></div>
+                            <div class="color-square color-accent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-info">
+                <h3>Корпоративный стиль</h3>
+                <p>Фирменный стиль РУП "Гомельэнерго" отражает наши ценности: надежность, инновационность и ответственность перед потребителями.</p>
+                <p>Все элементы стиля разработаны в соответствии с корпоративными стандартами и должны использоваться в официальных документах и материалах.</p>
+                <a href="https://www.gomelenergo.by/wp-content/uploads/2021/11/BRANDBOOK-GOMELENERGO.pdf" class="btn btn-primary">Смотреть брендбук</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Contacts -->
+<section class="section section-light" id="media-contacts">
+    <div class="section-title">
+        <h2>Контакты для СМИ</h2>
+        <p>Свяжитесь с нашими специалистами для получения информации</p>
+    </div>
+    <div class="media-contacts">
+        <div class="contact-card">
+            <div class="contact-photo" style="background-image: url('https://www.gomelenergo.by/wp-content/themes/gomelenergo/assets/images/specialist.jpg');"></div>
+            <div class="contact-name">Дробышевская Дарья Сергеевна</div>
+            <div class="contact-position">Специалист по связям с общественностью</div>
+            <div class="contact-details">
+                <div class="contact-detail">
+                    <span>📞</span>
+                    <span>+375 232 796261</span>
+                </div>
+                <div class="contact-detail">
+                    <span>✉️</span>
+                    <span>d.drobyshevskaya@gomelenergo.by</span>
+                </div>
+                <div class="social-links contact-social">
+                    <a href="https://www.facebook.com/gomelenergo/" title="Facebook">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/gomelenergo/" title="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCGDyEUz1LqIcE2rwxYC0JtQ" title="YouTube">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/gomelenergo" title="VK">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.562-1.042.562-1.52 0-3.188-.901-4.375-2.563-1.766-2.354-2.411-4.208-2.411-4.635 0-.218.083-.417.5-.417h1.459c.375 0 .51.167.656.552.708 2.084 1.916 3.896 2.406 3.896.188 0 .27-.083.27-.552v-2.146c-.062-.979-.582-1.062-.582-1.416a.36.36 0 0 1 .365-.334h2.188c.312 0 .417.156.417.531v2.896c0 .313.135.417.229.417.188 0 .333-.104.677-.448.989-1.093 1.708-2.708 1.708-2.708.093-.219.229-.365.552-.365h1.459c.437 0 .53.219.437.531-.219.656-2.312 3.729-2.312 3.729-.187.27-.27.416 0 .803.188.385.833.927 1.24 1.458.781.948 1.354 1.812 1.354 2.375 0 .281-.167.417-.5.417z"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/gomelenergo_by" title="Telegram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.139l-1.895 8.874c-.125.533-.475.663-.863.421l-3.865-2.852-1.89 1.806c-.209.209-.385.385-.789.385l.277-3.973 7.159-6.458c.312-.278-.069-.432-.482-.156l-8.86 5.587-3.736-1.169c-.533-.167-.544-.533.111-.789l14.572-5.602c.443-.167.833.125.694.789z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карта в карточке -->
+        <div class="map-card">
+            <div class="map-header">
+                <div class="map-title">Наш офис</div>
+                <div class="map-subtitle">г. Гомель, ул. Фрунзе, 9</div>
+            </div>
+            <div class="map-container">
+                <div id="yamap0"></div>
+            </div>
+            <div class="map-footer">
+                <div class="map-address">г. Гомель, ул. Фрунзе, 9</div>
+                <a href="https://yandex.by/maps/-/CDUq7Q0H" class="map-link" target="_blank">
+                    Открыть в Яндекс.Картах →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Пресс-центр</h3>
+                <ul class="footer-links">
+                    <li><a href="#news">Все новости</a></li>
+                    <li><a href="#brand-style">Фирменный стиль</a></li>
+                    <li><a href="https://npa.gomelenergo.by">История газетной строкой</a></li>
+                    <li><a href="https://www.gomelenergo.by/god-kachestva/">Год благоустройства</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Услуги</h3>
+                <ul class="footer-links">
+                    <li><a href="/services/">Физическим лицам</a></li>
+                    <li><a href="/jelektronnye-uslugi-dlya-jur-lic/">Юридическим лицам</a></li>
+                    <li><a href="https://www.belenergo.by/content/klientam-fizicheskim-litsam-i-predprinimatelyam/tarify/">Тарифы</a></li>
+                    <li><a href="https://www.belenergo.by/content/podklyuchenie/">Подключение</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="contact-info">
+                    <div class="contact-item-footer">
+                        <span>📞</span>
+                        <span>+375 232 79-63-59 (приемная)</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>📧</span>
+                        <span>energo@gomelenergo.by</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>📍</span>
+                        <span>г. Гомель, ул. Фрунзе, 9</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>🚨</span>
+                        <span>Аварийная служба: 144, 115</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 РУП "Гомельэнерго". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Яндекс.Карта скрипт -->
+    <script>
+        if (typeof(YaMapsWP) === "undefined") {
+            var YaMapsWP = {}, YMlisteners = {};
+            var YaMapsScript = document.createElement("script");    
+            var YaMapsScriptCounter = [];                    
+        }
+        var myMap0;            
+    </script>
+    <script type="text/javascript">                                        
+    document.addEventListener("DOMContentLoaded", function() { 
+           if (document.getElementById("YandexMapAPI-js") == null ) {
+                   YaMapsScriptCounter.push(function() {ymaps.ready(init)});
+                   if (document.getElementById("YandexMapAPI-alt-js") == null ) { 
+                       function AltApiLoad(src){
+                          YaMapsScript.id = "YandexMapAPI-alt-js";
+                          YaMapsScript.src = src;
+                          YaMapsScript.async = false;
+                          document.head.appendChild(YaMapsScript);
+                       }
+                       AltApiLoad("https://api-maps.yandex.ru/2.1/?lang=ru_RU&ver=2.1");
+                       window.onload = function() {
+                           YaMapsScriptCounter.forEach(function(entryFunc) {
+                               entryFunc();
+                           });
+                       }
+                   }
+               } 
+               else {
+                   ymaps.ready(init); 
+               }
+               
+                YMlisteners.myMap0 = {};
+                YaMapsWP.myMap0 = {center: "52.413549, 31.005711", zoom: "15", type: "yandex#map", controls: "typeSelector;zoomControl;searchControl;routeEditor;rulerControl;trafficControl;fullscreenControl;geolocationControl", places: {}};
+
+                var yamapsonclick = function (url) {
+                        location.href=url;
+                }                        
+
+                function init () {
+                    myMap0 = new ymaps.Map("yamap0", {
+                            center: [52.413549, 31.005711],
+                            zoom: 15,
+                            type: "yandex#map",
+                            controls: ["typeSelector", "zoomControl", "searchControl", "routeEditor", "rulerControl", "trafficControl", "fullscreenControl", "geolocationControl"] ,
+                            
+                        },
+                        {
+                            suppressMapOpenBlock: true
+                        }); 
+
+                        
+        YaMapsWP.myMap0.places.placemark1 = {icon: "islands#dotIcon", name: "Цех", color: "#ff0505", coord: "52.413549, 31.005711", url: "",};
+        myMap0placemark1 = new ymaps.Placemark([52.413549, 31.005711], {
+                            hintContent: "Цех",
+                            iconContent: "",
+                        }, {                        
+                            preset: "islands#dotIcon", 
+                            iconColor: "#ff0505",
+                        });  
+        myMap0.geoObjects.add(myMap0placemark1);
+                }
+        }, false);
+    </script>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to current page in navigation
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(item => {
+            if(item.href === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+
+        // Press navigation active state
+        const pressNavItems = document.querySelectorAll('.press-nav-menu a');
+        pressNavItems.forEach(item => {
+            item.addEventListener('click', function() {
+                pressNavItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

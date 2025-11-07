@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гомельэнерго - Контакты</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #004494;
+            --secondary: #00c853;
+            --accent: #ff6d00;
+            --dark: #1a237e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--light);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .emergency-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .emergency-contact .icon {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Navigation */
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .company-name h1 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .company-name p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background: rgba(0,86,179,0.1);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            color: var(--gray);
+        }
+
+        .contact-item strong {
+            color: var(--dark);
+            min-width: 120px;
+        }
+
+        /* Service Center */
+        .service-center {
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .service-center-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-center-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .service-center-header h3 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-center-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .branch-contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .branch-contact-item strong {
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .branch-contact-item span {
+            color: var(--gray);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Branch Contacts */
+        .branch-contacts {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .branch-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .branch-item {
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .branch-item:hover {
+            border-color: var(--primary);
+        }
+
+        .branch-header {
+            padding: 1.5rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .branch-header:hover {
+            background: var(--primary-dark);
+        }
+
+        .branch-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .branch-content.active {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+
+        .branch-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Additional Contacts */
+        .additional-contacts {
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .additional-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .additional-card h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-list-item strong {
+            color: var(--dark);
+        }
+
+        .contact-list-item span {
+            color: var(--gray);
+        }
+
+        /* Parent Organization */
+        .parent-organization {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .parent-content {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .logo-container {
+            flex: 0 0 250px;
+            background: #f0f4f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            border-right: 1px solid #e1e8f0;
+        }
+
+        .logo-placeholder {
+            text-align: center;
+            color: #0057b8;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .logo-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .parent-card {
+            flex: 1;
+            padding: 30px;
+            min-width: 300px;
+        }
+
+        .parent-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .parent-contact-item {
+            display: flex;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .parent-contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .parent-contact-item strong {
+            flex: 0 0 200px;
+            color: #0057b8;
+        }
+
+        .parent-contact-item span {
+            flex: 1;
+        }
+
+        .parent-contact-item a {
+            color: #0057b8;
+            text-decoration: none;
+        }
+
+        .parent-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #000 100%);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .contacts-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-main {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .branch-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .branch-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .parent-content {
+                flex-direction: column;
+            }
+            
+            .logo-container {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid #e1e8f0;
+                padding: 20px;
+            }
+            
+            .parent-contact-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .parent-contact-item strong {
+                flex: none;
+            }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="emergency-contact">
+                <div class="icon">!</div>
+                <span>Аварийная служба: <strong>144, 115</strong></span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/gomelenergo/" title="Facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/gomelenergo/" title="Instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCGDyEUz1LqIcE2rwxYC0JtQ" title="YouTube">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="https://vk.com/gomelenergo" title="VK">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.833-1.229-.937-1.448-.937-.302 0-.385.083-.385.5v1.312c0 .354-.115.562-1.042.562-1.52 0-3.188-.901-4.375-2.563-1.766-2.354-2.411-4.208-2.411-4.635 0-.218.083-.417.5-.417h1.459c.375 0 .51.167.656.552.708 2.084 1.916 3.896 2.406 3.896.188 0 .27-.083.27-.552v-2.146c-.062-.979-.582-1.062-.582-1.416a.36.36 0 0 1 .365-.334h2.188c.312 0 .417.156.417.531v2.896c0 .313.135.417.229.417.188 0 .333-.104.677-.448.989-1.093 1.708-2.708 1.708-2.708.093-.219.229-.365.552-.365h1.459c.437 0 .53.219.437.531-.219.656-2.312 3.729-2.312 3.729-.187.27-.27.416 0 .803.188.385.833.927 1.24 1.458.781.948 1.354 1.812 1.354 2.375 0 .281-.167.417-.5.417z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/gomelenergo_by" title="Telegram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.139l-1.895 8.874c-.125.533-.475.663-.863.421l-3.865-2.852-1.89 1.806c-.209.209-.385.385-.789.385l.277-3.973 7.159-6.458c.312-.278-.069-.432-.482-.156l-8.86 5.587-3.736-1.169c-.533-.167-.544-.533.111-.789l14.572-5.602c.443-.167.833.125.694.789z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <div class="logo-section">
+            <div class="logo">ГЭ</div>
+            <div class="company-name">
+                <h1>Гомельэнерго</h1>
+                <p>Республиканское унитарное предприятие</p>
+            </div>
+        </div>
+        
+        <button class="mobile-menu-btn">☰</button>
+        
+    <ul class="nav-menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="About.html">О предприятии</a></li>
+        <li><a href="#">Физическим лицам</a></li>
+        <li><a href="#">Юридическим лицам</a></li>
+        <li><a href="Presscenter.html">Пресс-центр</a></li>
+        <li><a href="Contacts.html">Контакты</a></li>
+        <li><a href="https://gsz.gov.by/registration/vacancy-search/?profession=&region=9397&district=&salary_min=&wage_rate_from=&wage_rate_to=&business_entity=166426&search_period=0&sort_by=sort_published_at_desc=&extended_search=True">Вакансии</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Контакты</h2>
+            <p>На данной странице можно найти всю актуальную информацию о контактных данных центрального аппарата управления РУП "Гомельэнерго" и его филиалов</p>
+        </div>
+    </section>
+
+    <!-- Main Contacts -->
+    <section class="main-content">
+        <div class="section-title">
+            <h2>Контакты Аппарата управления</h2>
+            <p>Основные контакты центрального аппарата управления РУП "Гомельэнерго"</p>
+        </div>
+        
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Адрес</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Главный офис:</strong>
+                        <span>246050, г. Гомель, ул. Фрунзе, 9</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Телефоны</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Приемная:</strong>
+                        <span>+375 232 79-63-59</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Факс:</strong>
+                        <span>+375 232 50-95-56</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Аварийная:</strong>
+                        <span>144, 115</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Электронная почта</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Общий:</strong>
+                        <span>energo@gomelenergo.by</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Резервный:</strong>
+                        <span>energo@mail.gomelenergo.by</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">🕒</div>
+                <h3>Режим работы</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Пн-Чт:</strong>
+                        <span>8:00 - 17:00</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Пятница:</strong>
+                        <span>8:00 - 16:00</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Сб-Вс:</strong>
+                        <span>Выходной</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Center -->
+    <section class="service-center">
+        <div class="section-title">
+            <h2>Сервисно-расчетный центр</h2>
+            <p>Филиал «Энергосбыт» РУП «Гомельэнерго»</p>
+        </div>
+        
+        <div class="service-center-card">
+            <div class="service-center-header">
+                <h3>Контактная информация СРЦ</h3>
+            </div>
+            <div class="service-center-grid">
+                <div class="branch-contact-item">
+                    <strong>Почтовый адрес</strong>
+                    <span>246050 г.Гомель, ул.Моисеенко, 3</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>Телефон приёмной</strong>
+                    <span>+375 (232) 49 34 69</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>Телефон специалистов</strong>
+                    <span>+375 (232) 49-33-75</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>Факс</strong>
+                    <span>+375 232 49-34-65</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>E-mail</strong>
+                    <span>src@gomelenergo.by</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>Начальник СРЦ</strong>
+                    <span>Лёгенькая Ольга Станиславовна</span>
+                </div>
+                <div class="branch-contact-item">
+                    <strong>Заместитель начальника СРЦ</strong>
+                    <span>Балазёва Екатерина Андреевна</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Contacts -->
+    <section class="branch-contacts">
+        <div class="section-title">
+            <h2>Контакты филиалов</h2>
+            <p>Свяжитесь с нашими региональными подразделениями</p>
+        </div>
+        
+        <div class="branch-grid">
+            <!-- Первый столбец -->
+            <div class="branch-column">
+                <!-- Филиал Энергосбыт -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Филиал «Энергосбыт»</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>246050, ул. Моисеенко, 3, г. Гомель</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (232) 49 33 59</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (232) 49 34 34</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>energosbyt@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Лавринович Виталий Сергеевич</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Гомельские тепловые сети -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Гомельские тепловые сети</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>246020, Индустриальный проезд, 4, г. Гомель</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (232) 50 53 59</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (232) 50-59-65</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>gomelteploseti@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Коваленко Валерий Иванович</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Гомельские электрические сети -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Гомельские электрические сети</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>246020, ул. Барыкина, 252, г. Гомель</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (232) 20 29 75</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (232) 20 29 75</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>gomeles@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Савенок Александр Анатольевич</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Жлобинские электрические сети -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Жлобинские электрические сети</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>247196, ул.Советская,54, г. Жлобин</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (2334) 7-48-79</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (2334) 7-35-27</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>jlobines@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Ткачёв Владимир Васильевич</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Второй столбец -->
+            <div class="branch-column">
+                <!-- Филиал Мозырские электрические сети -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Мозырские электрические сети</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>247767, д. Наровчизна ул. Берёзовая, 22а, Мозырский р-н</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (236) 37 23 59</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (236) 24 85 37</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>mozyres@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Лапуста Степан Иванович</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Речицкие электрические сети -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Речицкие электрические сети</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>247500, ул. Энергетиков, 10, г. Речица</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (2340) 5 45 74</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (2340) 5 45 74</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>rechicaes@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Гроховский Дмитрий Роальдович</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Светлогорская ТЭЦ -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Светлогорская ТЭЦ</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>247439, ул. Советская, 1а, г. Светлогорск</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (2342) 3 44 27</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (2342) 3 48 36</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>svetlogorsktec@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Нистор Виталий Григорьевич</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Филиал Мозырская ТЭЦ -->
+                <div class="branch-item">
+                    <div class="branch-header" onclick="toggleBranch(this)">
+                        <h3>Мозырская ТЭЦ</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="branch-content">
+                        <div class="branch-contact-grid">
+                            <div class="branch-contact-item">
+                                <strong>Адрес:</strong>
+                                <span>247760, Михалковский с/с, 6, Мозырский р-н</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Телефон:</strong>
+                                <span>+375 (2363) 7 27 59</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Факс:</strong>
+                                <span>+375 (2363) 7 27 20</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Email:</strong>
+                                <span>mozyrtec@gomelenergo.by</span>
+                            </div>
+                            <div class="branch-contact-item">
+                                <strong>Директор:</strong>
+                                <span>Базылев Леонид Владимирович</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Иные контактные данные -->
+    <section class="additional-contacts">
+        <div class="section-title">
+            <h2>Прочие контактные данные</h2>
+            <p>Дополнительные контакты для решения различных вопросов</p>
+        </div>
+        
+        <div class="additional-grid">
+            <div class="additional-card">
+                <h3>Экстренные и основные службы</h3>
+                <div class="contact-list">
+                    <div class="contact-list-item">
+                        <strong>Аварийная диспетчерская служба:</strong>
+                        <span>144</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Приборы учета, неисправность:</strong>
+                        <span>49-31-26, 49-31-22, 49-33-75</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Расчеты, льготы:</strong>
+                        <span>49-33-75, 49-31-27, 49-31-28</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Подключение к электрическим сетям:</strong>
+                        <span>49-34-57</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Электрофизические измерения:</strong>
+                        <span>79-30-56, (33) 901-22-23</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="additional-card">
+                <h3>Контакты для СМИ</h3>
+                <div class="contact-list">
+                    <div class="contact-list-item">
+                        <strong>Пресс-служба:</strong>
+                        <span>+375 (232) 79-63-59</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Email для СМИ:</strong>
+                        <span>press@gomelenergo.by</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <strong>Отдел по связям с общественностью:</strong>
+                        <span>+375 (232) 50-95-54</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты вышестоящей организации -->
+    <section class="parent-organization">
+        <div class="section-title">
+            <h2>Контакты вышестоящей организации</h2>
+            <p>Государственное производственное объединение электроэнергетики «Белэнерго»</p>
+        </div>
+        
+        <div class="parent-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <div class="logo-text">БЕЛЭНЕРГО</div>
+                    <div class="logo-subtitle">ГПО электроэнергетики</div>
+                </div>
+            </div>
+            
+            <div class="parent-card">
+                <div class="parent-contact-list">
+                    <div class="parent-contact-item">
+                        <strong>Вышестоящая организация:</strong>
+                        <span>Государственное производственное объединение электроэнергетики «Белэнерго»</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Адрес:</strong>
+                        <span>220004, г. Минск, ул. Шорная, 17</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Телефон:</strong>
+                        <span>+375 17 2182359</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Факс:</strong>
+                        <span>+375 17 2182639, +375 17 2274181</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>E-mail:</strong>
+                        <span>belenergo@bel.energo.by</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Режим работы:</strong>
+                        <span>ежедневно с 8.30 до 12.30 и с 13.30 до 17.30</span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Веб-сайт:</strong>
+                        <span><a href="https://www.belenergo.by/">www.belenergo.by</a></span>
+                    </div>
+                    <div class="parent-contact-item">
+                        <strong>Выходные дни:</strong>
+                        <span>суббота, воскресенье</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О предприятии</h3>
+                <ul class="footer-links">
+                    <li><a href="/about/#basicInformation">Основные сведения</a></li>
+                    <li><a href="/about/#keyIndicators">Ключевые показатели</a></li>
+                    <li><a href="/about/#companyStructure">Структура предприятия</a></li>
+                    <li><a href="/about/#leadershipStaff">Руководящий состав</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Услуги</h3>
+                <ul class="footer-links">
+                    <li><a href="/services/">Физическим лицам</a></li>
+                    <li><a href="/jelektronnye-uslugi-dlya-jur-lic/">Юридическим лицам</a></li>
+                    <li><a href="https://www.belenergo.by/content/klientam-fizicheskim-litsam-i-predprinimatelyam/tarify/">Тарифы</a></li>
+                    <li><a href="https://www.belenergo.by/content/podklyuchenie/">Подключение</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <span>📞</span>
+                        <span>+375 232 79-63-59 (приемная)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>📧</span>
+                        <span>energo@gomelenergo.by</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>📍</span>
+                        <span>г. Гомель, ул. Фрунзе, 9</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>🚨</span>
+                        <span>Аварийная служба: 144, 115</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 РУП "Гомельэнерго". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Branch contacts toggle
+        function toggleBranch(element) {
+            const content = element.nextElementSibling;
+            const isActive = content.classList.contains('active');
+            
+            // Close all other branches
+            document.querySelectorAll('.branch-content.active').forEach(activeContent => {
+                if (activeContent !== content) {
+                    activeContent.classList.remove('active');
+                    activeContent.previousElementSibling.querySelector('span').textContent = '▼';
+                }
+            });
+            
+            // Toggle current branch
+            content.classList.toggle('active');
+            element.querySelector('span').textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to current page in navigation
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(item => {
+            if(item.href === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

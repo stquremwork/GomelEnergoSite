@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О предприятии - Гомельэнерго</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #004494;
+            --secondary: #00c853;
+            --accent: #ff6d00;
+            --dark: #1a237e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: var(--light);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .emergency-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .emergency-contact .icon {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Остальные стили остаются без изменений... */
+        /* Navigation */
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .company-name h1 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .company-name p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background: rgba(0,86,179,0.1);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230056b3" width="1200" height="800"/><path fill="%23004494" d="M0,0L1200,800H0V0Z"/></svg>');
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+        }
+
+        /* Basic Information */
+        .basic-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .basic-info-image {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 400px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .basic-info-content h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .basic-info-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Key Indicators */
+        .indicators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .indicator-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .indicator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .indicator-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .indicator-desc {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Company Structure */
+        .structure-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .structure-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .structure-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .leader-photo {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .leader-info {
+            padding: 1.5rem;
+        }
+
+        .leader-info h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .leader-position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-about {
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* History */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contacts */
+        .contacts-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .map-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            height: 400px;
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .requisites {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .requisites h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #000 100%);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-main {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .basic-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contacts-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0;
+            }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .circle-list {
+            list-style-type: circle;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="emergency-contact">
+                <div class="icon">!</div>
+                <span>Аварийная служба: <strong>144, 115</strong></span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/gomelenergo/" title="Facebook">
+                    <svg class="social-icon" viewBox="0 0 27 27" fill="currentColor">
+                        <path d="M27 13.5C27 6.04336 20.9566 0 13.5 0C6.04336 0 0 6.04336 0 13.5C0 20.9566 6.04336 27 13.5 27C13.5791 27 13.6582 27 13.7373 26.9947V16.49H10.8369V13.1098H13.7373V10.6207C13.7373 7.73613 15.4986 6.16465 18.0721 6.16465C19.3061 6.16465 20.366 6.2543 20.6719 6.29648V9.31289H18.9C17.5025 9.31289 17.2283 9.97734 17.2283 10.9529V13.1045H20.577L20.1393 16.4848H17.2283V26.4779C22.8709 24.859 27 19.6646 27 13.5Z" fill="white" fill-opacity="0.6"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/gomelenergo/" title="Instagram">
+                    <svg class="social-icon" viewBox="0 0 27 27" fill="currentColor">
+                        <path d="M16.084 13.5C16.084 14.9271 14.9271 16.084 13.5 16.084C12.0729 16.084 10.916 14.9271 10.916 13.5C10.916 12.0729 12.0729 10.916 13.5 10.916C14.9271 10.916 16.084 12.0729 16.084 13.5Z" fill="white"/>
+                        <path d="M19.5429 8.92831C19.4187 8.59171 19.2205 8.28705 18.963 8.03697C18.7129 7.77948 18.4085 7.58131 18.0717 7.4571C17.7985 7.35101 17.3882 7.22474 16.6324 7.19034C15.8148 7.15305 15.5697 7.14502 13.4998 7.14502C11.4298 7.14502 11.1847 7.15285 10.3673 7.19013C9.61151 7.22474 9.20097 7.35101 8.92802 7.4571C8.59122 7.58131 8.28656 7.77948 8.03669 8.03697C7.7792 8.28705 7.58103 8.59151 7.45661 8.92831C7.35052 9.20145 7.22425 9.612 7.18985 10.3678C7.15257 11.1852 7.14453 11.4303 7.14453 13.5003C7.14453 15.5702 7.15257 15.8153 7.18985 16.6329C7.22425 17.3887 7.35052 17.799 7.45661 18.0722C7.58103 18.409 7.77899 18.7134 8.03648 18.9635C8.28656 19.221 8.59102 19.4191 8.92782 19.5434C9.20097 19.6497 9.61151 19.7759 10.3673 19.8103C11.1847 19.8476 11.4296 19.8554 13.4996 19.8554C15.5699 19.8554 15.815 19.8476 16.6322 19.8103C17.388 19.7759 17.7985 19.6497 18.0717 19.5434C18.7477 19.2826 19.2821 18.7482 19.5429 18.0722C19.649 17.799 19.7752 17.3887 19.8098 16.6329C19.8471 15.8153 19.855 15.5702 19.855 13.5003C19.855 11.4303 19.8471 11.1852 19.8098 10.3678C19.7754 9.612 19.6492 9.20145 19.5429 8.92831ZM13.4998 17.4807C11.3013 17.4807 9.51902 15.6987 9.51902 13.5001C9.51902 11.3016 11.3013 9.51951 13.4998 9.51951C15.6982 9.51951 17.4805 11.3016 17.4805 13.5001C17.4805 15.6987 15.6982 17.4807 13.4998 17.4807ZM17.6378 10.2924C17.1241 10.2924 16.7076 9.87588 16.7076 9.36213C16.7076 8.84838 17.1241 8.43186 17.6378 8.43186C18.1516 8.43186 18.5681 8.84838 18.5681 9.36213C18.5679 9.87588 18.1516 10.2924 17.6378 10.2924Z" fill="white"/>
+                        <path d="M13.5 0C6.0453 0 0 6.0453 0 13.5C0 20.9547 6.0453 27 13.5 27C20.9547 27 27 20.9547 27 13.5C27 6.0453 20.9547 0 13.5 0ZM21.2052 16.696C21.1677 17.5212 21.0365 18.0846 20.8449 18.5777C20.4422 19.619 19.619 20.4422 18.5777 20.8449C18.0848 21.0365 17.5212 21.1675 16.6962 21.2052C15.8695 21.2429 15.6055 21.252 13.5002 21.252C11.3947 21.252 11.1309 21.2429 10.304 21.2052C9.479 21.1675 8.91541 21.0365 8.42246 20.8449C7.90501 20.6502 7.43658 20.3452 7.04931 19.9507C6.65504 19.5636 6.34996 19.095 6.1553 18.5777C5.96372 18.0848 5.8325 17.5212 5.79501 16.6962C5.7569 15.8693 5.74805 15.6053 5.74805 13.5C5.74805 11.3947 5.7569 11.1307 5.79481 10.304C5.8323 9.4788 5.96331 8.91541 6.15488 8.42226C6.34955 7.90501 6.65483 7.43637 7.04931 7.04931C7.43637 6.65483 7.90501 6.34975 8.42226 6.15509C8.91541 5.96352 9.4788 5.8325 10.304 5.79481C11.1307 5.75711 11.3947 5.74805 13.5 5.74805C15.6053 5.74805 15.8693 5.75711 16.696 5.79501C17.5212 5.8325 18.0846 5.96352 18.5777 6.15488C19.095 6.34955 19.5636 6.65483 19.9509 7.04931C20.3452 7.43658 20.6505 7.90501 20.8449 8.42226C21.0367 8.91541 21.1677 9.4788 21.2054 10.304C21.2431 11.1307 21.252 11.3947 21.252 13.5C21.252 15.6053 21.2431 15.8693 21.2052 16.696Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCGDyEUz1LqIcE2rwxYC0JtQ" title="YouTube">
+                    <svg class="social-icon" viewBox="0 0 27 27" fill="currentColor">
+                        <path d="M11.8184 16.0291L16.2097 13.4999L11.8184 10.9707V16.0291Z" fill="white"/>
+                        <path d="M13.5 0C6.0453 0 0 6.0453 0 13.5C0 20.9547 6.0453 27 13.5 27C20.9547 27 27 20.9547 27 13.5C27 6.0453 20.9547 0 13.5 0ZM21.9354 13.5138C21.9354 13.5138 21.9354 16.2517 21.5881 17.5719C21.3935 18.2945 20.8237 18.8643 20.1011 19.0587C18.7809 19.4062 13.5 19.4062 13.5 19.4062C13.5 19.4062 8.23295 19.4062 6.89893 19.0449C6.17631 18.8505 5.60653 18.2805 5.41187 17.5579C5.06435 16.2517 5.06435 13.5 5.06435 13.5C5.06435 13.5 5.06435 10.7623 5.41187 9.44213C5.60632 8.71951 6.19011 8.13572 6.89893 7.94126C8.21915 7.59375 13.5 7.59375 13.5 7.59375C13.5 7.59375 18.7809 7.59375 20.1011 7.95506C20.8237 8.14952 21.3935 8.71951 21.5881 9.44213C21.9494 10.7623 21.9354 13.5138 21.9354 13.5138Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://vk.com/gomelenergo" title="VK">
+                    <svg class="social-icon" viewBox="0 0 27 27" fill="currentColor">
+                        <path d="M13.5 0C6.04441 0 0 6.04413 0 13.5C0 20.9559 6.04441 27 13.5 27C20.9556 27 27 20.9559 27 13.5C27 6.04413 20.9556 0 13.5 0ZM20.3479 14.9601C20.9771 15.5746 21.6428 16.153 22.2077 16.8312C22.4579 17.1311 22.6938 17.4413 22.8734 17.7902C23.1297 18.2876 22.8982 18.8332 22.453 18.8627L19.6872 18.8622C18.9729 18.9213 18.4045 18.6332 17.9252 18.1448C17.5427 17.7556 17.1877 17.3399 16.8193 16.9375C16.6687 16.7723 16.5102 16.6168 16.3213 16.4944C15.9442 16.2492 15.6166 16.3243 15.4006 16.7182C15.1805 17.119 15.1302 17.5631 15.1092 18.0092C15.0791 18.6614 14.8825 18.8318 14.2281 18.8624C12.8299 18.9279 11.5032 18.7158 10.2702 18.0109C9.18249 17.3891 8.34058 16.5116 7.60696 15.518C6.17837 13.5812 5.08429 11.4555 4.10124 9.26867C3.87999 8.77617 4.04185 8.51266 4.58517 8.50245C5.48784 8.48504 6.39051 8.48725 7.29318 8.50162C7.66054 8.50742 7.90361 8.71762 8.04476 9.06427C8.53255 10.2644 9.13056 11.4063 9.87993 12.4653C10.0796 12.7473 10.2835 13.0285 10.5738 13.2277C10.8942 13.4475 11.1384 13.3749 11.2895 13.0172C11.3861 12.7899 11.4278 12.5468 11.4488 12.3032C11.5206 11.4687 11.5292 10.6345 11.4049 9.80342C11.3276 9.2833 11.0351 8.94743 10.5166 8.84909C10.2525 8.7991 10.2912 8.70132 10.4197 8.55051C10.6426 8.28976 10.8514 8.12845 11.2687 8.12845L14.3936 8.1279C14.886 8.22457 14.9965 8.44555 15.0634 8.94163L15.0661 12.4142C15.0603 12.6062 15.1625 13.1752 15.5073 13.3008C15.7835 13.392 15.9658 13.1705 16.1309 12.9956C16.8803 12.2004 17.4142 11.2618 17.8924 10.2904C18.1034 9.86197 18.2854 9.41865 18.4622 8.9745C18.5937 8.64608 18.7981 8.48449 19.1688 8.49002L22.1778 8.49361C22.2665 8.49361 22.3566 8.49444 22.4444 8.50963C22.9515 8.59636 23.0905 8.81457 22.9336 9.30927C22.6866 10.0865 22.2068 10.734 21.7378 11.3831C21.2351 12.078 20.699 12.7487 20.2012 13.4467C19.7438 14.0847 19.78 14.406 20.3479 14.9601Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/gomelenergo_by" title="Telegram">
+                    <svg class="social-icon" viewBox="0 0 27 27" fill="currentColor">
+                        <path d="M13.5 0C6.04441 0 0 6.04413 0 13.5C0 20.9559 6.04441 27 13.5 27C20.9556 27 27 20.9559 27 13.5C27 6.04413 20.9556 0 13.5 0ZM20.3479 14.9601C20.9771 15.5746 21.6428 16.153 22.2077 16.8312C22.4579 17.1311 22.6938 17.4413 22.8734 17.7902C23.1297 18.2876 22.8982 18.8332 22.453 18.8627L19.6872 18.8622C18.9729 18.9213 18.4045 18.6332 17.9252 18.1448C17.5427 17.7556 17.1877 17.3399 16.8193 16.9375C16.6687 16.7723 16.5102 16.6168 16.3213 16.4944C15.9442 16.2492 15.6166 16.3243 15.4006 16.7182C15.1805 17.119 15.1302 17.5631 15.1092 18.0092C15.0791 18.6614 14.8825 18.8318 14.2281 18.8624C12.8299 18.9279 11.5032 18.7158 10.2702 18.0109C9.18249 17.3891 8.34058 16.5116 7.60696 15.518C6.17837 13.5812 5.08429 11.4555 4.10124 9.26867C3.87999 8.77617 4.04185 8.51266 4.58517 8.50245C5.48784 8.48504 6.39051 8.48725 7.29318 8.50162C7.66054 8.50742 7.90361 8.71762 8.04476 9.06427C8.53255 10.2644 9.13056 11.4063 9.87993 12.4653C10.0796 12.7473 10.2835 13.0285 10.5738 13.2277C10.8942 13.4475 11.1384 13.3749 11.2895 13.0172C11.3861 12.7899 11.4278 12.5468 11.4488 12.3032C11.5206 11.4687 11.5292 10.6345 11.4049 9.80342C11.3276 9.2833 11.0351 8.94743 10.5166 8.84909C10.2525 8.7991 10.2912 8.70132 10.4197 8.55051C10.6426 8.28976 10.8514 8.12845 11.2687 8.12845L14.3936 8.1279C14.886 8.22457 14.9965 8.44555 15.0634 8.94163L15.0661 12.4142C15.0603 12.6062 15.1625 13.1752 15.5073 13.3008C15.7835 13.392 15.9658 13.1705 16.1309 12.9956C16.8803 12.2004 17.4142 11.2618 17.8924 10.2904C18.1034 9.86197 18.2854 9.41865 18.4622 8.9745C18.5937 8.64608 18.7981 8.48449 19.1688 8.49002L22.1778 8.49361C22.2665 8.49361 22.3566 8.49444 22.4444 8.50963C22.9515 8.59636 23.0905 8.81457 22.9336 9.30927C22.6866 10.0865 22.2068 10.734 21.7378 11.3831C21.2351 12.078 20.699 12.7487 20.2012 13.4467C19.7438 14.0847 19.78 14.406 20.3479 14.9601Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-main">
+    <div class="logo-section">
+        <div class="logo">ГЭ</div>
+        <div class="company-name">
+            <h1>Гомельэнерго</h1>
+            <p>Республиканское унитарное предприятие</p>
+        </div>
+    </div>
+    
+    <button class="mobile-menu-btn">☰</button>
+    
+    <ul class="nav-menu">
+        <li><a href="../index.html">Главная</a></li>
+        <li><a href="About.html">О предприятии</a></li>
+        <li><a href="#">Физическим лицам</a></li>
+        <li><a href="#">Юридическим лицам</a></li>
+        <li><a href="Presscenter.html">Пресс-центр</a></li>
+        <li><a href="Contacts.html">Контакты</a></li>
+        <li><a href="https://gsz.gov.by/registration/vacancy-search/?profession=&region=9397&district=&salary_min=&wage_rate_from=&wage_rate_to=&business_entity=166426&search_period=0&sort_by=sort_published_at_desc=&extended_search=True">Вакансии</a></li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>О предприятии</h2>
+            <p>РУП «Гомельэнерго» – это единый сложный технологический комплекс, включающий электростанции, котельные, трансформаторные подстанции, электрические и тепловые сети, связанные общностью режима и непрерывностью работы.</p>
+            <div class="cta-buttons">
+                <a href="#basic-information" class="btn btn-primary">Основные сведения</a>
+                <a href="#structure" class="btn btn-secondary">Структура предприятия</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Basic Information -->
+<section class="section section-white" id="basic-information">
+    <div class="section-title">
+        <h2>Основные сведения</h2>
+        <p>Ключевая информация о предприятии</p>
+    </div>
+    <div class="basic-info">
+        <div class="basic-info-image" style="background-image: url('https://www.gomelenergo.by/wp-content/themes/gomelenergo/assets/images/basicInfoImg.jpg')"></div>
+        <div class="basic-info-content">
+            <h3>Гомельэнерго</h3>
+            <p>Гомельское республиканское унитарное предприятие электроэнергетики «Гомельэнерго» (сокращенно – РУП «Гомельэнерго») является структурной единицей Белорусского государственного объединения электроэнергетики «Белэнерго».</p>
+            <p>РУП «Гомельэнерго» – это единый сложный технологический комплекс, включающий электростанции, котельные, трансформаторные подстанции, электрические и тепловые сети, связанные общностью режима и непрерывностью работы.</p>
+            <p>В состав Гомельской энергосистемы входят: 6 электростанций: Светлогорская ТЭЦ, Мозырская ТЭЦ, Гомельская ТЭЦ-2, Гомельская ТЭЦ-1 (в составе Гомельских тепловых сетей), Жлобинская ТЭЦ (в составе Жлобинских электрических сетей), Речицкая мини-ТЭЦ (в составе Речицких электрических сетей), «Инженерный центр», «Учебный центр», «Гомельэнергоспецремонт», «Гомельские тепловые сети», «Энергосбыт», «Дубрава-агро», «Агрофирма имени Лебедева».</p>
+            <p>4 филиала электрических сетей: Гомельские ЭС, Жлобинские ЭС, Мозырские ЭС, Речицкие ЭС</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Activities and Tasks -->
+    <section class="section section-light">
+        <div class="section-title">
+            <h2>Предмет деятельности и основные задачи</h2>
+        </div>
+        <div class="container">
+            <p align="justify">Предметом деятельности РУП «Гомельэнерго» является осуществление производства, передачи, распределения электрической и тепловой энергии и продажи этой энергии юридическим лицам, индивидуальным предпринимателям и гражданам в целях удовлетворения их потребности в электрической и тепловой энергии, а также иной коммерческой деятельности.</p>
+            <p align="justify">Основными целями деятельности предприятия являются надежное, качественное, безопасное, экономически эффективное функционирование и инновационное развитие производства, передачи, распределения и продажи электрической и тепловой энергии потребителям, а также получение прибыли для удовлетворения экономических интересов предприятия и социальных интересов работников предприятия на основании стратегии развития предприятия.</p>
+            <p>Основными задачами РУП «Гомельэнерго» являются осуществление следующих основных видов экономической деятельности:</p>
+            <ul class="circle-list">
+                <li>производство электроэнергии тепловыми электростанциями;</li>
+                <li>производство электроэнергии прочими электростанциями;</li>
+                <li>передача электроэнергии;</li>
+                <li>распределение электроэнергии;</li>
+                <li>продажа электроэнергии;</li>
+                <li>производство тепловой энергии тепловыми электростанциями, самостоятельными котельными, прочими источниками;</li>
+                <li>передача и распределение тепловой энергии тепловыми сетями;</li>
+                <li>теплоснабжение;</li>
+                <li>техническое обслуживание (эксплуатация и ремонт), строительство, реконструкция и модернизация электрических станций, котельных, электрических и тепловых сетей, энергетического и технологического оборудования;</li>
+                <li>внедрение информационных технологий;</li>
+                <li>иные виды деятельности.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Key Indicators -->
+    <section class="section section-white" id="key-indicators">
+        <div class="section-title">
+            <h2>Производственная характеристика предприятия</h2>
+            <p>На 01.01.2025г.</p>
+        </div>
+        <div class="indicators-grid">
+            <div class="indicator-card">
+                <div class="indicator-number">972,718</div>
+                <div class="indicator-desc">Установленная мощность электрическая, МВт</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">3980,28</div>
+                <div class="indicator-desc">Установленная мощность тепловая, Гкал/ч</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">19</div>
+                <div class="indicator-desc">Количество турбоагрегатов, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">56</div>
+                <div class="indicator-desc">Количество котлоагрегатов, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">974,980</div>
+                <div class="indicator-desc">Протяженность тепловых сетей, км</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">6936</div>
+                <div class="indicator-desc">Протяженность ЛЭП 35–330 кВ, км</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">36 722</div>
+                <div class="indicator-desc">Протяженность линий 0,38-10 кВ, км</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">25</div>
+                <div class="indicator-desc">Количество районов электросетей, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">253</div>
+                <div class="indicator-desc">Количество подстанций 35-330 кВ, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">10 891</div>
+                <div class="indicator-desc">Количество трансформаторных подстанций 10(6)/0,38 кВ, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">121</div>
+                <div class="indicator-desc">Количество РП 6–10 кВ, шт.</div>
+            </div>
+            <div class="indicator-card">
+                <div class="indicator-number">13 599</div>
+                <div class="indicator-desc">Количество установленных трансформаторов 6 –10 кВ, шт.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Structure -->
+    <section class="section section-light" id="structure">
+        <div class="section-title">
+            <h2>Структура предприятия</h2>
+        </div>
+        <div class="structure-wrapper">
+            <div class="structure-image">
+                <img usemap="#image-map" src="https://www.gomelenergo.by/wp-content/uploads/2024/10/method-draw-image4.svg" alt="organization_structure" original-font-size="15px" original-border-color="rgb(0, 0, 0)" original-background-color="rgba(0, 0, 0, 0)" original-background-image="none" original-color="rgb(0, 0, 0)" original-box-shadow="none" original-text-shadow="none" original-font-family="Conv_PFDinTextPro-Regular, sans-serif" original-letter-spacing="0.225px" original-line-height="20.25px"> </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="section section-white" id="leadership">
+        <div class="section-title">
+            <h2>Руководящий состав</h2>
+        </div>
+        <div class="leadership-grid">
+            <div class="leader-card">
+            <div class="leader-photo" style="width: 400px; height: 250px; background-image: url('https://www.gomelenergo.by/wp-content/uploads/2024/02/ao1a8649-1-1-150x150.jpg');"></div>
+                <div class="leader-info">
+                    <h4>Коваленко Михаил Александрович</h4>
+                    <div class="leader-position">Генеральный директор РУП «Гомельэнерго»</div>
+                    <div class="leader-about">Родился 7 марта 1970 года в д. Жуковичи Октябрьского района Гомельской области. В 1997 году окончил Гомельский политехнический институт по специальности «Электроснабжение», в 2006 − Академию управления при Президенте Республики Беларусь по специальности «Экономика и управление на предприятии».</div>
+                </div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-photo" style="width: 400px; height: 250px; background-image: url('https://www.gomelenergo.by/wp-content/uploads/2023/05/ao1a3656.jpg')";></div>
+                 <div class="leader-info">
+                    <h4>Толкач Вадим Александрович</h4>
+                    <div class="leader-position">Первый заместитель генерального директора - главный инженер РУП «Гомельэнерго»</div>
+                    <div class="leader-about">Родился в 1974 году в г.Светлогорск Гомельской области. Окончил в 1996 году Белорусскую государственную политехническую академию по специальности «электрические станции», в 2007 году – Академию управления при Президенте Республики Беларусь по специальности «экономика и управление на предприятии промышленности».</div>
+                </div>
+            </div>
+            <div class="leader-card">
+<div class="leader-photo" style="width: 400px; height: 250px; background-image: url('https://www.gomelenergo.by/wp-content/uploads/2021/10/rivanov.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                <div class="leader-info">
+                    <h4>Иванов Сергей Юрьевич</h4>
+                    <div class="leader-position">Заместитель генерального директора по капитальному строительству РУП «Гомельэнерго»</div>
+                    <div class="leader-about">Родился 5 сентября 1963 года в г. Добруш Гомельской области.
+В 1985 году окончил Белорусский политехнический институт по специальности «Тепловые электрические станции», в 2006 – Академию управления при Президенте Республики Беларусь по специальности «Экономика и управление на предприятии промышленности».
+В Гомельской энергосистеме работает с 1985 года.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History -->
+    <section class="section section-light" id="history">
+        <div class="section-title">
+            <h2>История</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">Апрель 1923 г.</div>
+                    <p>По свидетельству историков, электроэнергия в Гомеле впервые была использована в 1900-м. Всё изменилось, когда грянула социалистическая революция. Чрезвычайную комиссию по электрификации Гомельской губернии создали в июле 1921 года, а в декабре проект строительства станции был утверждён. 29 апреля 1923 года состоялось открытие Гомельской центральной электростанции.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">1958-1979 гг.</div>
+                    <p>– введена в эксплуатацию первая очередь Василевичской ГРЭС (ныне Светлогорской ТЭЦ), мощностью 50 МВт;<br>
+                    – образовано районное энергетическое управление «Гомельэнерго» (РЭУ «Гомельэнерго»);<br>
+                    – ввод в эксплуатацию ПС-220кВ «Центролит»;<br>
+                    – введена в эксплуатацию вторая очередь Василевичской ГРЭС;<br>
+                    – создан Учебный комбинат, впоследствии – Учебный центр.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">1981-1989 гг.</div>
+                    <p>– ввод в эксплуатацию ПС-330кВ «Гомсельмаш» с врезкой в ВЛ-330кВ Могилев-Гомель;<br>
+                    – ввод в эксплуатацию ВЛ-330кВ Гомель-330 - Кричев, Чернобыльская АЭС – Мозырь, ПС-330кВ «Мозырь», которая сыграла огромную роль в решении вопросов энергоснабжения Гомельщины после чернобыльских событий 1986 года;<br>
+                    – прием на баланс филиала "Гомельские тепловые сети" котельных "Западная", "Северная".</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">1990-е гг.</div>
+                    <p>– введена в эксплуатацию линия 330 кВ «Гомель-Мозырь» протяженностью 152 км;<br>
+                    – Гомельская ТЭЦ-2 достигла проектной мощности 540 МВт с вводом турбогенератора № 3 мощностью 180 МВт.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contacts and Requisites -->
+<section class="section section-white" id="contacts">
+    <div class="section-title">
+        <h2>Контакты и реквизиты</h2>
+    </div>
+    <div class="contacts-wrapper">
+        <div class="map-container">
+            <!-- Яндекс.Карта -->
+            <div class="map" id="map">
+                <script>
+                    if (typeof(YaMapsWP) === "undefined") {
+                        var YaMapsWP = {}, YMlisteners = {};
+                        var YaMapsScript = document.createElement("script");    
+                        var YaMapsScriptCounter = [];                    
+                    }
+                    var myMap0;            
+                </script>
+                <script type="text/javascript">                                        
+                document.addEventListener("DOMContentLoaded", function() { 
+                       if (document.getElementById("YandexMapAPI-js") == null ) {
+                               YaMapsScriptCounter.push(function() {ymaps.ready(init)});
+                               if (document.getElementById("YandexMapAPI-alt-js") == null ) { 
+                                   function AltApiLoad(src){
+                                      YaMapsScript.id = "YandexMapAPI-alt-js";
+                                      YaMapsScript.src = src;
+                                      YaMapsScript.async = false;
+                                      document.head.appendChild(YaMapsScript);
+                                   }
+                                   AltApiLoad("https://api-maps.yandex.ru/2.1/?lang=ru_RU&ver=2.1");
+                                   window.onload = function() {
+                                       YaMapsScriptCounter.forEach(function(entryFunc) {
+                                           entryFunc();
+                                       });
+                                   }
+                               }
+                           } 
+                           else {
+                               ymaps.ready(init); 
+                           }
+                           
+                            YMlisteners.myMap0 = {};
+                            YaMapsWP.myMap0 = {center: "52.413549, 31.005711", zoom: "15", type: "yandex#map", controls: "typeSelector;zoomControl;searchControl;routeEditor;rulerControl;trafficControl;fullscreenControl;geolocationControl", places: {}};
+
+                            var yamapsonclick = function (url) {
+                                    location.href=url;
+                            }                        
+
+                            function init () {
+                                myMap0 = new ymaps.Map("yamap0", {
+                                        center: [52.413549, 31.005711],
+                                        zoom: 15,
+                                        type: "yandex#map",
+                                        controls: ["typeSelector", "zoomControl", "searchControl", "routeEditor", "rulerControl", "trafficControl", "fullscreenControl", "geolocationControl"] ,
+                                        
+                                    },
+                                    {
+                                        suppressMapOpenBlock: true
+                                    }); 
+
+                                    
+                YaMapsWP.myMap0.places.placemark1 = {icon: "islands#dotIcon", name: "Цех", color: "#ff0505", coord: "52.413549, 31.005711", url: "",};
+                myMap0placemark1 = new ymaps.Placemark([52.413549, 31.005711], {
+                                        hintContent: "Цех",
+                                        iconContent: "",
+                                    }, {                        
+                                        preset: "islands#dotIcon", 
+                                        iconColor: "#ff0505",
+                                    });  
+                myMap0.geoObjects.add(myMap0placemark1);
+                            }
+                    }, false);
+                </script>
+                <div id="yamap0" style="position: relative; height: 22rem; margin-bottom: 0px !important;"></div>
+                <div style="position: relative; height: 0;  margin-bottom: 0rem !important; margin-top:0 !important; overflow: visible; width: 100%; text-align: center; top: -32px;">
+                    <a href="https://www.yhunter.ru/portfolio/dev/yamaps/" title="YaMaps — Яндекс.Карты для WordPress" target="_blank" style="display: inline-block; -webkit-box-align: center; padding: 3.5px 5px; text-decoration: none !important; border-bottom: 0; border-radius: 3px; background-color: #fff; cursor: pointer; white-space: nowrap; box-shadow: 0 1px 2px 1px rgba(0,0,0,.15),0 2px 5px -3px rgba(0,0,0,.15);">
+                        <img src="https://www.gomelenergo.by/wp-content/plugins/yamaps/includes/../js/img/placeholder.svg" alt="" style="width: 17px; height: 17px; margin: 0; display: block;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contacts-info">
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                    <strong>Адрес:</strong>
+                    <span>246050, г. Гомель, ул. Фрунзе, 9</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-details">
+                    <strong>Телефон:</strong>
+                    <span>+375 232 509554</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📠</div>
+                <div class="contact-details">
+                    <strong>Факс:</strong>
+                    <span>+375 232 509556, +375 232 509558</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-details">
+                    <strong>E-mail:</strong>
+                    <span>energo@gomelenergo.by</span>
+                    <span>energo@mail.gomelenergo.by</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🕒</div>
+                <div class="contact-details">
+                    <strong>Режим работы:</strong>
+                    <span>ежедневно с 8.00 до 12.00 и с 13.00 до 17.00 (пятница до 16.00)</span>
+                    <span><em>выходные дни</em> – суббота, воскресенье</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="requisites">
+        <h4>Банковские реквизиты:</h4>
+        <p>р/с BY55AKBB30120882600653000000</p>
+        <p>Гомельское областное управление №300 ОАО "АСБ Беларусбанк"</p>
+        <p>BIC AKBBBY2X</p>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О предприятии</h3>
+                <ul class="footer-links">
+                    <li><a href="#basic-information">Основные сведения</a></li>
+                    <li><a href="#key-indicators">Ключевые показатели</a></li>
+                    <li><a href="#structure">Структура предприятия</a></li>
+                    <li><a href="#leadership">Руководящий состав</a></li>
+                    <li><a href="#history">История</a></li>
+                    <li><a href="#contacts">Контакты и реквизиты</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Услуги</h3>
+                <ul class="footer-links">
+                    <li><a href="/services/">Физическим лицам</a></li>
+                    <li><a href="/jelektronnye-uslugi-dlya-jur-lic/">Юридическим лицам</a></li>
+                    <li><a href="https://www.belenergo.by/content/klientam-fizicheskim-litsam-i-predprinimatelyam/tarify/">Тарифы</a></li>
+                    <li><a href="https://www.belenergo.by/content/podklyuchenie/">Подключение</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="contact-info">
+                    <div class="contact-item-footer">
+                        <span>📞</span>
+                        <span>+375 232 79-63-59 (приемная)</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>📧</span>
+                        <span>energo@gomelenergo.by</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>📍</span>
+                        <span>г. Гомель, ул. Фрунзе, 9</span>
+                    </div>
+                    <div class="contact-item-footer">
+                        <span>🚨</span>
+                        <span>Аварийная служба: 144, 115</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 РУП "Гомельэнерго". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to current page in navigation
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(item => {
+            if(item.href === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
